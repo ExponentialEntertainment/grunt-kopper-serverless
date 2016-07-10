@@ -28,5 +28,8 @@
     "grunt-aws-lambda": "*",
     "grunt-contrib-nodeunit": "*"
   },
+	"devDependencies": {
+    "grunt-release": "*"
+  },
   "main": "main.js"
 }
