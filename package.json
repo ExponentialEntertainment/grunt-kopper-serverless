@@ -29,6 +29,7 @@
     "grunt-contrib-nodeunit": "*"
   },
   "devDependencies": {
+		"aws-sdk": "*",
 		"kopper-serverless": "*",
     "grunt-release": "*"
   },
