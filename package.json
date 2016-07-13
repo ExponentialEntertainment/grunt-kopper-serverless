@@ -1,7 +1,7 @@
 {
   "name": "grunt-kopper-serverless",
   "description": "A grunt utility for easily testing and deploying AWS lambda + AWS api gateway apis/apps",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "keywords": [
     "aws",
     "lambda",
