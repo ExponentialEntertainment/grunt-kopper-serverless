@@ -1,0 +1,1 @@
+replace this file with cgi-node from /cgi folder in this repo. then replace the NODE_EXECUTABLE_PATH and TEMP_PATH values

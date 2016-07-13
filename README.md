@@ -26,7 +26,11 @@ If you've set up an api definition. You can run a local version of it via apache
 
 cgi-node is located at [cgi](/cgi/cgi-node.min.cgi) or at https://github.com/UeiRicho/cgi-node
 
-Copy this file into your lambdas folder directory along with [app.js](/cgi/app.js). Change `'api'` in app.js to to whatever file you named your api definition file. The router uses require() to include it.
+Copy this file into your lambdas folder directory along with [app.js](/cgi/app.js).
+
+Replace REAPLACE-cgi-node.min.cgi file with cgi-node from /cgi folder in this repo. Then replace the NODE_EXECUTABLE_PATH and TEMP_PATH values.
+
+Change `'api'` in app.js to to whatever file you named your api definition file. The router uses require() to include it.
 
 Then set up your apache directory directive like this:
 
