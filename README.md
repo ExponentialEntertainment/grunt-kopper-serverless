@@ -18,7 +18,22 @@ See the example [`Gruntfile.js`](examples/Gruntfile.js) for an example of what t
 
 ##test helpers
 
+You will need to add a test for each lambda function that you create. place it in /test/api/LAMBDA_NAME/test.js
+
+```
+var Kopper = require('grunt-kopper-serverless');
+
+exports.testMyFirstLambda = function (test) {
+	Kopper.Test.ok(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {
+		isLocal: true,
+		id: 'test'
+	});
+};
+```
+
 ##api definition
+
+See [api.js](/examples/lambda/api.js) for an example api definition file.
 
 ##running a local api with apache and cgi-node
 
