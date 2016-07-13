@@ -29,7 +29,11 @@
     "grunt-contrib-nodeunit": "*"
   },
   "devDependencies": {
+		"kopper-serverless": "*",
     "grunt-release": "*"
+  },
+	"scripts": {
+    "test": "grunt test"
   },
   "main": "main.js"
 }

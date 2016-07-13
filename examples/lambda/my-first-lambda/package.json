@@ -1,0 +1,10 @@
+{
+	"name": "example-app-my-first-lambda",
+	"version": "0.0.1",
+	"dependencies": {
+		"kopper-serverless": "*"
+	},
+	"bundledDependencies": [
+		"kopper-serverless"
+	]
+}
