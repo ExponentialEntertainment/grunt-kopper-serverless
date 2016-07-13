@@ -18,5 +18,27 @@ See the example [`Gruntfile.js`](examples/Gruntfile.js) for an example of what t
 
 ##test helpers
 
+##api definition
+
 ##running a local api with apache and cgi-node
 
+If you've set up an api definition. You can run a local version of it via apache and cgi-node.
+
+cgi-node is located at [cgi](/cgi/cgi-node.min.cgi) or at https://github.com/UeiRicho/cgi-node
+
+Copy this file into your lambdas folder directory along with [app.js](/cgi/app.js). Change `'api'` in app.js to to whatever file you named your api definition file. The router uses require() to include it.
+
+Then set up your apache directory directive like this:
+
+```
+Options +ExecCGI
+AddHandler cgi-script .cgi
+		
+AddHandler cgi-node .js
+Action cgi-node /cgi-node.min.cgi
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ app.js [QSA,L]
+```
