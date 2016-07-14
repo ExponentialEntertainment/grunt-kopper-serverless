@@ -18,16 +18,39 @@ See the example [`Gruntfile.js`](examples/Gruntfile.js) for an example of what t
 
 ##test helpers
 
-You will need to add a test for each lambda function that you create. place it in /test/api/LAMBDA_NAME/test.js
+grunt-kopper-serverless uses nodeunit + grunt-contrib-nodeunit for tests. You will need to add a test for each lambda function that you create. place it in /test/api/LAMBDA_NAME/test.js
 
 ```
 var Kopper = require('grunt-kopper-serverless');
 
-exports.testMyFirstLambda = function (test) {
-	Kopper.Test.ok(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {
-		isLocal: true,
-		id: 'test'
-	});
+exports.testMyFirstLambda = {
+	testOK: function (test) {
+		Kopper.Test.ok(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {
+			isLocal: true,
+			id: 'test'
+		});
+	},
+	testFail: function(test){
+		Kopper.Test.fail(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {
+			isLocal: true,
+			id: 'test'
+		});
+	},
+	testWithContext: function (test) {
+		Kopper.Test.test(__dirname + '/../../../examples/lambda', 'my-first-lambda', {
+			isLocal: true,
+			id: 'test'
+		}, {
+			succeed: function (response) {
+				test.ok(response.message, 'there is a message');
+				test.done();
+			},
+			fail: function (error) {
+				test.ok(false, error.toString());
+				test.done();
+			}
+		});
+	}
 };
 ```
 
