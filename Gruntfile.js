@@ -38,4 +38,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', ['test-my-first-lambda', 'nodeunit:all']);
 	grunt.registerTask('test-lcov', ['nodeunit:all-lcov']);
+	
+	grunt.registerTask('publish', ['test', 'release']);
 };
