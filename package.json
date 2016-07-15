@@ -1,40 +1,46 @@
 {
-  "name": "grunt-kopper-serverless",
-  "description": "A grunt utility for easily testing and deploying AWS lambda + AWS api gateway apis/apps",
-  "version": "0.0.5",
-  "keywords": [
-    "aws",
-    "lambda",
-    "api gateway",
-    "serverless",
-    "grunt"
-  ],
-  "author": "Ben Connito",
-  "homepage": "https://github.com/benconnito/grunt-kopper-serverless",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/benconnito/grunt-kopper-serverless.git"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/benconnito/grunt-kopper-serverless/blob/master/LICENSE.md"
-    }
-  ],
-  "dependencies": {
-    "underscore": "*",
-    "bluebird": "*",
-    "grunt": "*",
-    "grunt-aws-lambda": "*",
-    "grunt-contrib-nodeunit": "*"
-  },
-  "devDependencies": {
-    "aws-sdk": "*",
-    "kopper-serverless": "*",
-    "grunt-release": "*"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "main": "main.js"
+	"name": "grunt-kopper-serverless",
+	"description": "A grunt utility for easily testing and deploying AWS lambda + AWS api gateway apis/apps",
+	"version": "0.0.5",
+	"keywords": [
+		"aws",
+		"lambda",
+		"api gateway",
+		"serverless",
+		"grunt"
+	],
+	"author": "Ben Connito",
+	"homepage": "https://github.com/benconnito/grunt-kopper-serverless",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/benconnito/grunt-kopper-serverless.git"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/benconnito/grunt-kopper-serverless/blob/master/LICENSE.md"
+		}
+	],
+	"dependencies": {
+		"underscore": "*",
+		"bluebird": "*",
+		"grunt": "*",
+		"grunt-aws-lambda": "*",
+		"grunt-contrib-nodeunit": "*"
+	},
+	"devDependencies": {
+		"aws-sdk": "*",
+		"kopper-serverless": "*",
+		"grunt-release": "*",
+		"jscoverage": "*",
+		"grunt-coveralls": "*"
+	},
+	"scripts": {
+		"test": "grunt test",
+		"coveralls": "jscoverage lib && GRUNT_KOPPER_SERVERLESS_COV=1 grunt test-lcov && grunt coveralls:upload"
+	},
+	"engines": {
+		"node": ">=4.0.0"
+	},
+	"main": "main.js"
 }

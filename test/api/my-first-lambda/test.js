@@ -1,5 +1,10 @@
 var Kopper = require('../../../main');
 
-exports.testMyFirstLambda = function (test) {
-	Kopper.Test.ok(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {});
+exports.myFirstLambda = {
+	testOK: function (test) {
+		Kopper.Test.ok(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, null);
+	},
+	testFail: function (test) {
+		Kopper.Test.fail(__dirname + '/../../../examples/lambda', 'my-first-lambda', test, {});
+	}
 };

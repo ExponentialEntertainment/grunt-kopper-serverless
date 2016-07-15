@@ -2,6 +2,9 @@
 A grunt utility for easily testing and deploying AWS lambda + AWS api gateway apis/apps.
 
 [![Build Status](https://travis-ci.org/benconnito/grunt-kopper-serverless.svg)](https://travis-ci.org/benconnito/grunt-kopper-serverless)
+[![Coverage Status](https://coveralls.io/repos/github/benconnito/grunt-kopper-serverless/badge.svg?branch=master)](https://coveralls.io/github/benconnito/grunt-kopper-serverless?branch=master)
+[![Dependency Status](https://david-dm.org/benconnito/grunt-kopper-serverless.svg)](https://david-dm.org/benconnito/grunt-kopper-serverless)
+[![devDependency Status](https://david-dm.org/benconnito/grunt-kopper-serverless/dev-status.svg)](https://david-dm.org/benconnito/grunt-kopper-serverless#info=devDependencies)
 
 ##there is a library too!
 Use https://github.com/benconnito/kopper-serverless for developing the lambda functions. It has some Error classes, success/fail wrappers, and an AWS config method.
