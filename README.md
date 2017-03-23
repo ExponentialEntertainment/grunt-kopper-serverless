@@ -9,12 +9,12 @@ A grunt utility for easily testing and deploying AWS lambda + AWS api gateway ap
 ##there is a library too!
 Use https://github.com/benconnito/kopper-serverless for developing the lambda functions. It has some Error classes, success/fail wrappers, and an AWS config method.
 
-##Getting Started
+## Getting Started
 ```
 npm install grunt-kopper-serverless
 ```
 
-##usage
+## usage
 Unlike most grunt plugins where you `grunt.loadNpmTask` this library is just some helper methods for auto setting up your config and adding some run, test, and deploy methods.
 
 See the example [`Gruntfile.js`](examples/Gruntfile.js) for an example of what to write.
@@ -57,11 +57,11 @@ exports.testMyFirstLambda = {
 };
 ```
 
-##api definition
+## api definition
 
 See [api.js](/examples/lambda/api.js) for an example api definition file.
 
-##running a local api with apache and cgi-node
+## running a local api with apache and cgi-node
 
 If you've set up an api definition. You can run a local version of it via apache and cgi-node.
 
